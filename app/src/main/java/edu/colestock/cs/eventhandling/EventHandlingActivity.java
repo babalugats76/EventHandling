@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.widget.Button;
 
 public class EventHandlingActivity extends Activity {
 
@@ -12,6 +12,12 @@ public class EventHandlingActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_handling);
+        // Assumes that the view has an example button named "button"
+        Button button = (Button) findViewById(R.id.button);
+        // Instantiate ExampleOnClickListener (to handle the button's onClick event)
+        ExampleOnClickListener btnLsnr = new ExampleOnClickListener();
+        // Set the button's listener to instance instantiated above
+        button.setOnClickListener(btnLsnr);
     }
 
 
